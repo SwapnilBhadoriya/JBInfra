@@ -7,12 +7,12 @@ app.use(cors());
 app.use(express.json());
 
 //Routers
-const customerRouter = require('./routes/customer')
+const customerRouter = require("./routes/customer");
 
-
-app.use('/customer', customerRouter)
-
-
+app.use("/customer", customerRouter);
+app.get("/", (req, res) => {
+  return res.send("Hey your Api is running !!");
+});
 
 const { connectDB } = require("./config/dbConfig");
 
